@@ -1,0 +1,1022 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package jogoLogica_2;
+
+import java.awt.Color;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import repositorios.RepositorioTXT;
+
+/**
+ *
+ * @author USUARIOO
+ */
+public class Jogo2 extends jogo.Jogo {
+    public String[] lista = new String[15];//Array de Strings para receber valores selecionados para arquivameto e recuperação
+    public String dir = "Jogo2";
+    RepositorioTXT rep = new RepositorioTXT(lista, dir);
+    public Date t = new Date();
+    /**
+     * Creates new form Jogo1
+     */
+    public Jogo2() {
+        super(new Date());
+        initComponents();
+    }
+    /*Lógica de Marcação para dica 2 */
+    public void Logica2(){
+        if( (box4.getSelectedItem().equals("Lusolândia") && box5.getSelectedItem().equals("Quarta-feira") && !(box6.getSelectedItem().equals("08h45") || box6.getSelectedItem().equals("10h40"))) || 
+            (box7.getSelectedItem().equals("Lusolândia") && box8.getSelectedItem().equals("Quarta-feira") && !(box9.getSelectedItem().equals("08h45") || box9.getSelectedItem().equals("10h40"))) || 
+            (box10.getSelectedItem().equals("Lusolândia") && box11.getSelectedItem().equals("Quarta-feira") && !(box12.getSelectedItem().equals("08h45") || box12.getSelectedItem().equals("10h40"))) )
+        { 
+            jTextField3.setBackground(Color.YELLOW);
+            jTextField4.setBackground(Color.YELLOW);
+        }
+        else
+        {
+            jTextField3.setBackground(Color.getColor("Controle"));
+            jTextField4.setBackground(Color.getColor("Controle"));
+        }
+    }
+    /*Lógica de Marcação para dica 5 */
+    public void Logica6(){
+        if( ((box4.getSelectedItem().equals("Ponte Nova"))  && (box6.getSelectedItem().equals("10h10"))  && !((box5.getSelectedItem().equals("Sexta-feira")) || (box5.getSelectedItem().equals("Sábado"))) ) ||
+            ((box7.getSelectedItem().equals("Ponte Nova"))  && (box9.getSelectedItem().equals("10h10"))  && !((box8.getSelectedItem().equals("Sexta-feira")) || (box8.getSelectedItem().equals("Sábado"))) ) ||
+            ((box10.getSelectedItem().equals("Ponte Nova")) && (box12.getSelectedItem().equals("10h10")) && !((box11.getSelectedItem().equals("Sexta-feita")) || (box11.getSelectedItem().equals("Sábado"))) ) ||
+            ((box13.getSelectedItem().equals("Ponte Nova")) && (box15.getSelectedItem().equals("10h10")) && !((box14.getSelectedItem().equals("Sexta-feita")) || (box14.getSelectedItem().equals("Sábado"))) ) )
+        {
+            jTextField7.setBackground(Color.YELLOW);
+        }//Fim do bloco condicional que seleciona com cor amarela uma linha específica das dicas do jogo
+        else
+        {
+            jTextField7.setBackground(Color.getColor("Controle"));
+        }//Fim d
+    }
+    /*Lógica para conferir o Resultado do Jogo*/
+    public void Lista(){
+        if(
+            box1.getSelectedItem().equals("Três Vilas") && box2.getSelectedItem().equals("Sábado") && box3.getSelectedItem().equals("10h40") && 
+            box4.getSelectedItem().equals("Liberdade") && box5.getSelectedItem().equals("Quinta-feira") && box6.getSelectedItem().equals("09h50") && 
+            box7.getSelectedItem().equals("Monte Rosa") && box8.getSelectedItem().equals("Sexta-feira") && box9.getSelectedItem().equals("08h45") &&
+            box10.getSelectedItem().equals("Lusolândia") && box11.getSelectedItem().equals("Quarta-feira") && box12.getSelectedItem().equals("09h30") && 
+            box13.getSelectedItem().equals("Ponte Nova") && box14.getSelectedItem().equals("Terça-feira") && box15.getSelectedItem().equals("10h10")
+          )
+        {            
+            JOptionPane.showMessageDialog(null, "Parabéns, Você concluiu o desafio!");
+            super.tempo();
+            super.desempenhoJogo();
+        }
+       else
+        {
+            if(!(box1.getSelectedItem().equals(" ")) && !(box2.getSelectedItem().equals(" ")) && !(box3.getSelectedItem().equals(" ")) && 
+               !(box4.getSelectedItem().equals(" ")) && !(box5.getSelectedItem().equals(" ")) && !(box6.getSelectedItem().equals(" ")) && 
+               !(box7.getSelectedItem().equals(" ")) && !(box8.getSelectedItem().equals(" ")) && !(box9.getSelectedItem().equals(" ")) && 
+               !(box10.getSelectedItem().equals(" ")) && !(box11.getSelectedItem().equals(" ")) && !(box12.getSelectedItem().equals(" ")) && 
+               !(box13.getSelectedItem().equals(" ")) && !(box14.getSelectedItem().equals(" ")) && !(box15.getSelectedItem().equals(" "))
+              )
+            {
+                JOptionPane.showMessageDialog(null, "Respostas incorretas!");
+            }
+        }
+    }
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel2 = new javax.swing.JPanel();
+        box1 = new javax.swing.JComboBox();
+        box2 = new javax.swing.JComboBox();
+        box3 = new javax.swing.JComboBox();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        box4 = new javax.swing.JComboBox();
+        box5 = new javax.swing.JComboBox();
+        box6 = new javax.swing.JComboBox();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        box7 = new javax.swing.JComboBox();
+        box8 = new javax.swing.JComboBox();
+        box9 = new javax.swing.JComboBox();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        box10 = new javax.swing.JComboBox();
+        box11 = new javax.swing.JComboBox();
+        box12 = new javax.swing.JComboBox();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        box13 = new javax.swing.JComboBox();
+        box14 = new javax.swing.JComboBox();
+        box15 = new javax.swing.JComboBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jPanel7 = new javax.swing.JPanel();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuOpcoes = new javax.swing.JMenu();
+        jMenuItemDiagrama2 = new javax.swing.JMenuItem();
+        jMenuItemSalvar = new javax.swing.JMenuItem();
+        jMenuItemArquivos = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setSize(new java.awt.Dimension(1365, 765));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        box1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Três Vilas", "Liberdade", "Monte Rosa", "Lusolândia", "Ponte Nova" }));
+        box1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box1ActionPerformed(evt);
+            }
+        });
+
+        box2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Sábado", "Quinta-feira", "Sexta-feira", "Quarta-feira", "Terça-feira" }));
+        box2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box2ActionPerformed(evt);
+            }
+        });
+
+        box3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "10h40", "09h50", "08h45", "09h30", "10h10" }));
+        box3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box3ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setText("Betina");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel8)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(box3, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(box1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(box2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 105, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Daniela");
+
+        box4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Três Vilas", "Liberdade", "Monte Rosa", "Lusolândia", "Ponte Nova" }));
+        box4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box4ActionPerformed(evt);
+            }
+        });
+
+        box5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Sábado", "Quinta-feira", "Sexta-feira", "Quarta-feira", "Terça-feira" }));
+        box5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box5ActionPerformed(evt);
+            }
+        });
+
+        box6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "10h40", "09h50", "08h45", "09h30", "10h10" }));
+        box6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel5)
+                        .addGap(0, 32, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(box6, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(box5, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(box4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setText("Érico");
+
+        box7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Três Vilas", "Liberdade", "Monte Rosa", "Lusolândia", "Ponte Nova" }));
+        box7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box7ActionPerformed(evt);
+            }
+        });
+
+        box8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Sábado", "Quinta-feira", "Sexta-feira", "Quarta-feira", "Terça-feira" }));
+        box8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box8ActionPerformed(evt);
+            }
+        });
+
+        box9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "10h40", "09h50", "08h45", "09h30", "10h10" }));
+        box9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(box9, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(box8, javax.swing.GroupLayout.Alignment.TRAILING, 0, 105, Short.MAX_VALUE)
+                            .addComponent(box7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setText("Mariana");
+
+        box10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Três Vilas", "Liberdade", "Monte Rosa", "Lusolândia", "Ponte Nova" }));
+        box10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box10ActionPerformed(evt);
+            }
+        });
+
+        box11.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Sábado", "Quinta-feira", "Sexta-feira", "Quarta-feira", "Terça-feira" }));
+        box11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box11ActionPerformed(evt);
+            }
+        });
+
+        box12.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "10h40", "09h50", "08h45", "09h30", "10h10" }));
+        box12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box12ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(39, 39, 39))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(box10, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(box11, javax.swing.GroupLayout.Alignment.TRAILING, 0, 105, Short.MAX_VALUE)
+                    .addComponent(box12, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Rafael");
+
+        box13.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Três Vilas", "Liberdade", "Monte Rosa", "Lusolândia", "Ponte Nova" }));
+        box13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box13ActionPerformed(evt);
+            }
+        });
+
+        box14.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Sábado", "Quinta-feira", "Sexta-feira", "Quarta-feira", "Terça-feira" }));
+        box14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box14ActionPerformed(evt);
+            }
+        });
+
+        box15.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "10h40", "09h50", "08h45", "09h30", "10h10" }));
+        box15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box15ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel9)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(box15, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(box14, javax.swing.GroupLayout.Alignment.TRAILING, 0, 105, Short.MAX_VALUE)
+                            .addComponent(box13, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(box15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(java.awt.SystemColor.control);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("\n O ano é 2005: cinco motoristas não pagaram a taxa de entrada recentemente \n instalada em uma grande cidade. Com as dicas dadas abaixo, descubra a cidade\n em questão, assim como o dia e a hora da infração.");
+        jTextArea1.setBorder(null);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Infração.png"))); // NOI18N
+        jLabel10.setText("jLabel10");
+
+        jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        jTextField1.setText(" 1- Daniela cometeu a infração de trânsito numa quita-feira às 09h50min,");
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.setEditable(false);
+        jTextField2.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        jTextField2.setText(" mas não na entrada de Três Vilas.");
+        jTextField2.setBorder(null);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jTextField4.setEditable(false);
+        jTextField4.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        jTextField4.setText(" Betina nem Rafael. Essa infração não acontaceu às  8h45min nem às 10h40min.");
+        jTextField4.setBorder(null);
+
+        jTextField3.setEditable(false);
+        jTextField3.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        jTextField3.setText(" 2- A pessoa que não pagou a taxa numa quarta-feira, na entrada de Lusolândia, não foi ");
+        jTextField3.setBorder(null);
+
+        jTextField5.setEditable(false);
+        jTextField5.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        jTextField5.setText(" 3- Érico cometeu a infração na entrada de Monte Rosa, mas não em um sábado nem às 10h40min.");
+        jTextField5.setBorder(null);
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+
+        jTextField6.setEditable(false);
+        jTextField6.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        jTextField6.setText(" 4- Mariana cometeu a infração às 9h30min.");
+        jTextField6.setBorder(null);
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+
+        jTextField7.setEditable(false);
+        jTextField7.setFont(new java.awt.Font("Monospaced", 1, 16)); // NOI18N
+        jTextField7.setText(" 5- A pessoa que entrou às 10h10min em Ponte Nova, antes de uma sexta-feira, não foi Betina.");
+        jTextField7.setBorder(null);
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 767, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+
+        jTextField11.setEditable(false);
+        jTextField11.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jTextField11.setText(" Cidade");
+        jTextField11.setBorder(null);
+
+        jTextField12.setEditable(false);
+        jTextField12.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jTextField12.setText(" Dia");
+        jTextField12.setBorder(null);
+
+        jTextField13.setEditable(false);
+        jTextField13.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jTextField13.setText(" Hora");
+        jTextField13.setBorder(null);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
+        );
+
+        jMenuOpcoes.setText("Opções");
+
+        jMenuItemDiagrama2.setText("Diagrama");
+        jMenuItemDiagrama2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemDiagrama2ActionPerformed(evt);
+            }
+        });
+        jMenuOpcoes.add(jMenuItemDiagrama2);
+
+        jMenuItemSalvar.setText("Salvar");
+        jMenuItemSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSalvarActionPerformed(evt);
+            }
+        });
+        jMenuOpcoes.add(jMenuItemSalvar);
+
+        jMenuItemArquivos.setText("Arquivos");
+        jMenuItemArquivos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemArquivosActionPerformed(evt);
+            }
+        });
+        jMenuOpcoes.add(jMenuItemArquivos);
+
+        jMenuBar1.add(jMenuOpcoes);
+
+        setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 839, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(343, 343, 343))
+        );
+
+        setBounds(0, 0, 1366, 770);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItemDiagrama2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDiagrama2ActionPerformed
+        // TODO add your handling code here:
+        new diagrama.Diagrama2().setVisible(true);
+    }//GEN-LAST:event_jMenuItemDiagrama2ActionPerformed
+
+    private void box1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box1ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        
+    }//GEN-LAST:event_box1ActionPerformed
+
+    private void box3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box3ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        
+    }//GEN-LAST:event_box3ActionPerformed
+
+    private void box2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box2ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+    
+    }//GEN-LAST:event_box2ActionPerformed
+
+    private void box4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box4ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica2();
+        if((box6.getSelectedItem().equals("09h50")) && (box5.getSelectedItem().equals("Quinta-feira")) && !(box4.getSelectedItem().equals("Três Vilas")))
+        {
+            jTextField1.setBackground(Color.YELLOW);
+            jTextField2.setBackground(Color.YELLOW);
+        }//Fim do bloco condicional que seleciona com cor amarela uma linha específica das dicas do jogo
+        else
+        {
+            jTextField1.setBackground(Color.getColor("Controle"));
+            jTextField2.setBackground(Color.getColor("Controle"));
+        }//Fim d
+        Logica6();
+    }//GEN-LAST:event_box4ActionPerformed
+
+    private void box5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box5ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica2();
+        if((box6.getSelectedItem().equals("09h50")) && (box5.getSelectedItem().equals("Quinta-feira")) && !(box4.getSelectedItem().equals("Três Vilas")))
+        {
+            jTextField1.setBackground(Color.YELLOW);
+            jTextField2.setBackground(Color.YELLOW);
+        }//Fim do bloco condicional que seleciona com cor amarela uma linha específica das dicas do jogo
+        else
+        {
+            jTextField1.setBackground(Color.getColor("Controle"));
+            jTextField2.setBackground(Color.getColor("Controle"));
+        }//Fim d
+        Logica6();
+    }//GEN-LAST:event_box5ActionPerformed
+
+    private void box6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box6ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica2();
+        if((box6.getSelectedItem().equals("09h50")) && (box5.getSelectedItem().equals("Quinta-feira")) && !(box4.getSelectedItem().equals("Três Vilas")))
+        {
+            jTextField1.setBackground(Color.YELLOW);
+            jTextField2.setBackground(Color.YELLOW);
+        }//Fim do bloco condicional que seleciona com cor amarela uma linha específica das dicas do jogo
+        else
+        {
+            jTextField1.setBackground(Color.getColor("Controle"));
+            jTextField2.setBackground(Color.getColor("Controle"));
+        }//Fim d
+        Logica6();
+    }//GEN-LAST:event_box6ActionPerformed
+
+    private void box7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box7ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica2();
+        if((box7.getSelectedItem().equals("Monte Rosa")) && !(box8.getSelectedItem().equals("Sábado")) && !(box9.getSelectedItem().equals("10h40")))
+        {
+            jTextField5.setBackground(Color.YELLOW);
+        }//Fim do bloco condicional que seleciona com cor amarela uma linha específica das dicas do jogo
+        else
+        {
+            jTextField5.setBackground(Color.getColor("Controle"));
+        }//Fim d
+        Logica6();
+    }//GEN-LAST:event_box7ActionPerformed
+
+    private void box8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box8ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica2();
+        if((box7.getSelectedItem().equals("Monte Rosa")) && !(box8.getSelectedItem().equals("Sábado")) && !(box9.getSelectedItem().equals("10h40")))
+        {
+            jTextField5.setBackground(Color.YELLOW);
+        }//Fim do bloco condicional que seleciona com cor amarela uma linha específica das dicas do jogo
+        else
+        {
+            jTextField5.setBackground(Color.getColor("Controle"));
+        }//Fim d
+        Logica6();
+    }//GEN-LAST:event_box8ActionPerformed
+
+    private void box9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box9ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica2();
+        if((box7.getSelectedItem().equals("Monte Rosa")) && !(box8.getSelectedItem().equals("Sábado")) && !(box9.getSelectedItem().equals("10h40")))
+        {
+            jTextField5.setBackground(Color.YELLOW);
+        }//Fim do bloco condicional que seleciona com cor amarela uma linha específica das dicas do jogo
+        else
+        {
+            jTextField5.setBackground(Color.getColor("Controle"));
+        }//Fim d
+        Logica6();
+    }//GEN-LAST:event_box9ActionPerformed
+
+    private void box10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box10ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica6();
+        Logica2();
+    }//GEN-LAST:event_box10ActionPerformed
+
+    private void box11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box11ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica6();
+        Logica2();
+        if (box11.getSelectedItem().equals("Sexta-feira") || !box11.getSelectedItem().equals(" "))
+        {
+            jTextField7.setBackground(Color.getColor("Controle"));
+        }
+    }//GEN-LAST:event_box11ActionPerformed
+
+    private void box12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box12ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica6();
+        Logica2();
+        if((box12.getSelectedItem().equals("09h30")))
+        {
+            jTextField6.setBackground(Color.YELLOW);
+        }//Fim do bloco condicional que seleciona com cor amarela uma linha específica das dicas do jogo
+        else
+        {
+            jTextField6.setBackground(Color.getColor("Controle"));
+        }//Fim d
+        
+    }//GEN-LAST:event_box12ActionPerformed
+
+    private void box13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box13ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica6();
+    }//GEN-LAST:event_box13ActionPerformed
+
+    private void box14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box14ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica6();
+        if (box14.getSelectedItem().equals("Sexta-feira"))
+        {
+            jTextField7.setBackground(Color.getColor("Controle"));
+        }
+    }//GEN-LAST:event_box14ActionPerformed
+
+    private void box15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box15ActionPerformed
+        // TODO add your handling code here:
+        Lista();
+        Logica6();
+    }//GEN-LAST:event_box15ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jMenuItemSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalvarActionPerformed
+        // TODO add your handling code here:
+        lista[0] = (String) box1.getSelectedItem();
+        lista[1] = (String) box2.getSelectedItem();
+        lista[2] = (String) box3.getSelectedItem();
+        lista[3] = (String) box4.getSelectedItem();
+        lista[4] = (String) box5.getSelectedItem();
+        lista[5] = (String) box6.getSelectedItem();
+        lista[6] = (String) box7.getSelectedItem();
+        lista[7] = (String) box8.getSelectedItem();
+        lista[8] = (String) box9.getSelectedItem();
+        lista[9] = (String) box10.getSelectedItem();
+        lista[10] = (String) box11.getSelectedItem();
+        lista[11] = (String) box12.getSelectedItem();
+        lista[12] = (String) box13.getSelectedItem();
+        lista[13] = (String) box14.getSelectedItem();
+        lista[14] = (String) box15.getSelectedItem();
+        rep.setListas(lista);
+        rep.armazenar();
+    }//GEN-LAST:event_jMenuItemSalvarActionPerformed
+
+    private void jMenuItemArquivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemArquivosActionPerformed
+        lista[0] = (String) box1.getSelectedItem();
+        lista[1] = (String) box2.getSelectedItem();
+        lista[2] = (String) box3.getSelectedItem();
+        lista[3] = (String) box4.getSelectedItem();
+        lista[4] = (String) box5.getSelectedItem();
+        lista[5] = (String) box6.getSelectedItem();
+        lista[6] = (String) box7.getSelectedItem();
+        lista[7] = (String) box8.getSelectedItem();
+        lista[8] = (String) box9.getSelectedItem();
+        lista[9] = (String) box10.getSelectedItem();
+        lista[10] = (String) box11.getSelectedItem();
+        lista[11] = (String) box12.getSelectedItem();
+        lista[12] = (String) box13.getSelectedItem();
+        lista[13] = (String) box14.getSelectedItem();
+        lista[14] = (String) box15.getSelectedItem();
+        box1.setSelectedItem(" ");
+        box2.setSelectedItem(" ");
+        box3.setSelectedItem(" ");
+        box4.setSelectedItem(" ");
+        box5.setSelectedItem(" ");
+        box6.setSelectedItem(" ");
+        box7.setSelectedItem(" ");
+        box8.setSelectedItem(" ");
+        box9.setSelectedItem(" ");
+        box10.setSelectedItem(" ");
+        box11.setSelectedItem(" ");
+        box12.setSelectedItem(" ");
+        box13.setSelectedItem(" ");
+        box14.setSelectedItem(" ");
+        box15.setSelectedItem(" ");
+        try{
+        lista = rep.recuperaArquivo();
+        box1.setSelectedItem(lista[0]);
+        box2.setSelectedItem(lista[1]);
+        box3.setSelectedItem(lista[2]);
+        box4.setSelectedItem(lista[3]);
+        box5.setSelectedItem(lista[4]);
+        box6.setSelectedItem(lista[5]);
+        box7.setSelectedItem(lista[6]);
+        box8.setSelectedItem(lista[7]);
+        box9.setSelectedItem(lista[8]);
+        box10.setSelectedItem(lista[9]);
+        box11.setSelectedItem(lista[10]);
+        box12.setSelectedItem(lista[11]);
+        box13.setSelectedItem(lista[12]);
+        box14.setSelectedItem(lista[13]);
+        box15.setSelectedItem(lista[14]);
+        }catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null, "Arquivo inexistente!");
+        }
+    }//GEN-LAST:event_jMenuItemArquivosActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Jogo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Jogo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Jogo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Jogo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Jogo2().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox box1;
+    private javax.swing.JComboBox box10;
+    private javax.swing.JComboBox box11;
+    private javax.swing.JComboBox box12;
+    private javax.swing.JComboBox box13;
+    private javax.swing.JComboBox box14;
+    private javax.swing.JComboBox box15;
+    private javax.swing.JComboBox box2;
+    private javax.swing.JComboBox box3;
+    private javax.swing.JComboBox box4;
+    private javax.swing.JComboBox box5;
+    private javax.swing.JComboBox box6;
+    private javax.swing.JComboBox box7;
+    private javax.swing.JComboBox box8;
+    private javax.swing.JComboBox box9;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemArquivos;
+    private javax.swing.JMenuItem jMenuItemDiagrama2;
+    private javax.swing.JMenuItem jMenuItemSalvar;
+    private javax.swing.JMenu jMenuOpcoes;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    // End of variables declaration//GEN-END:variables
+
+}
